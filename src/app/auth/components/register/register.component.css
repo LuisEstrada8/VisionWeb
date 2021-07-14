@@ -1,0 +1,42 @@
+.contenedorF{
+    width: 60vh;
+    height: 40vh;
+    margin-top: 5%;
+    border-radius: 12px;
+    -webkit-box-shadow: 14px 10px 41px -14px rgba(0,0,0,0.59);
+    -moz-box-shadow: 14px 10px 41px -14px rgba(0,0,0,0.59);
+    box-shadow: 14px 10px 41px -14px rgba(0,0,0,0.59);
+    
+  }
+  
+  .parrafo{
+    padding: 20px;
+  }
+  
+  .navbar-nav a{
+    border: 1px solid white;
+    border-radius: 20px;
+  }
+  
+  .navbar-nav a:hover{
+   background-color: rgba(255, 255, 255, .2);
+  }
+  
+  .bg-light{
+    background-color: teal !important;
+  }
+  
+  .navbar-nav a{
+    color: white !important;
+  }
+  
+  a .navbar-brand{
+    color: white !important;
+  }
+  
+  
+  @media screen and (max-width: 869px) {
+   .izquierda{
+     display: none;
+   }
+  }

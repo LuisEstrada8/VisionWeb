@@ -1,0 +1,67 @@
+  
+  .barra-lateral {
+    background: #262a34;
+    color: #fff;
+    min-width: 200px;
+    min-height: 100vh;
+    padding: 0;
+  }
+  
+  .barra-lateral a {
+    color: white;
+  }
+  
+  .barra-lateral .logo {
+    background: #0275db;
+    margin-bottom: 1px;
+  }
+  
+  .barra-lateral .logo h2 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 25px;
+    text-align: center;
+    font-weight: 300;
+    margin: 1;
+    padding: 20px 0;
+  }
+  
+  .barra-lateral .menu a {
+    display: block;
+    padding: 20px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 500;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    text-decoration: none;
+  }
+  
+  .barra-lateral .menu a i {
+    margin-right: 20px;
+  }
+  
+  .barra-lateral .menu a:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+
+  @media screen and (max-width: 1300px) {
+    .barra-lateral {
+      min-width: auto;
+    }
+    .barra-lateral .logo {
+      display: none;
+    }
+    .barra-lateral .menu a span {
+      display: none;
+    }
+  }
+  
+  @media screen and (max-width: 575px) {
+    .barra-lateral {
+      min-height: auto;
+    }
+    .barra-lateral .menu a {
+      display: inline-block;
+      border-bottom: none;
+    }
+  }
+  

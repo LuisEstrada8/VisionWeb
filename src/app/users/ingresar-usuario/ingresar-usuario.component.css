@@ -1,0 +1,120 @@
+.main {
+  padding-top: 40px;
+}
+
+.main .columna {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.main .titulo {
+  color: #262a34;
+  font-size: 25;
+  font-weight: 500;
+  font-family: "Nunito", sans-serif;
+  margin-bottom: 20px;
+}
+
+.main .widget {
+  margin-bottom: 40px;
+}
+
+.main .widget form input[type="text"],.main .widget form input[type="email"], .main .widget form textarea[type="text"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  font-family: "Nunito", sans-serif;
+  border: none;
+  -webkit-box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.1);
+}
+
+.main .widget form input[type="text"] {
+  font-weight: 400;
+}
+
+.main .widget form input[type="email"] {
+  font-weight: 400;
+}
+
+
+.main .widget form textarea[type="text"] {
+  height: 400px;
+  min-height: 200px;
+  max-width: 100%;
+  min-width: 100%;
+  text-align: justify;
+}
+
+.main .widget form button {
+  cursor: pointer;
+  font-family: "Nunito", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  border: none;
+  padding: 10px;
+  border-radius: 12px;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+}
+
+.main .widget form button:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #828282;
+}
+
+.main .estadisticas .contenedor {
+  -webkit-box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.2);
+}
+
+.main .estadisticas .caja {
+  background: white;
+  border: 1px solid #e3e3e3;
+  padding: 50px 40px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  text-align: center;
+  font-family: "Nunito", sans-serif;
+}
+
+.main .estadisticas .caja h3 {
+  margin-bottom: 10px;
+  color: #36ae6b;
+}
+
+.main .estadisticas .caja p {
+  color: #a8a8a8;
+  margin-bottom: 10px;
+}
+
+.main .estadisticas .caja:first-child {
+  border-right: none;
+}
+
+.main .estadisticas .caja:last-child {
+  border-left: none;
+}
+
+.main .comentarios .contenedor {
+  -webkit-box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.2);
+}
+
+
+@media screen and (max-width: 575px) {
+  .main .widget form button {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .main .comentarios .comentario .foto {
+    width: 30px;
+    height: 30px;
+  }
+  .main .comentarios .comentario .botones button {
+    width: 100%;
+  }
+}

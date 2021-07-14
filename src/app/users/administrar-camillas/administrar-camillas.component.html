@@ -1,0 +1,126 @@
+<main class="main col">
+    <div class="row">
+        <div class="columna col-lg-8">
+            <div class="widget nueva_entrada">
+                <h3 class="titulo">Ingresar Pacientes en Camillas</h3>
+                <form #costumerForm="ngForm" (ngSubmit)="addCostumer(costumerForm)">
+                    
+                  <input type="hidden" name="_id" [(ngModel)]="costumerServices.selectedCostumer._id"/>
+                    
+                  <div class="form-group">
+                    <input class="form-control" type="number" name="number" placeholder="Numero de la camilla" [(ngModel)]="costumerServices.selectedCostumer.number">
+                  </div>
+
+                    <div class="form-group">
+                      <input class="form-control" type="text" name="pacientName" placeholder="Nombre del paciente" [(ngModel)]="costumerServices.selectedCostumer.pacientName">
+                    </div>
+                    
+                    <div class="form-group">
+                      <input type="text" name="pacientSecondName" placeholder="Apellido Paterno del paciente" [(ngModel)]="costumerServices.selectedCostumer.pacientSecondName">
+                    </div>
+                    
+                    <div class="form-group">
+                      <input type="text" name="pacientLastName" placeholder="Apellido Materno del paciente" [(ngModel)]="costumerServices.selectedCostumer.pacientLastName" >
+                    </div>
+                    
+                    <div class="form-group">
+                      <input type="text" name="docotAsign" placeholder="Doctor Responsable" [(ngModel)]="costumerServices.selectedCostumer.docotAsign">
+                    </div>
+                    
+                    <div class="form-group">
+                      <input type="text" name="typeOperation"  placeholder="Tipo de operacion" [(ngModel)]="costumerServices.selectedCostumer.typeOperation">
+                    </div>
+                    
+                    <div class="form-group">
+                      <input type="text" name="typeOfDiet" placeholder="Operacion" [(ngModel)]="costumerServices.selectedCostumer.typeOfDiet">
+                    </div>
+                    
+                    <div class="d-flex justify-content-end">
+                        <button class="btn btn-success"><i class="fas fa-edit"></i>Enviar</button>
+                    </div>
+                </form>
+            </div>
+            <hr>
+            <div class="col-auto">
+                <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">Camilla</th>
+                        <th scope="col">Nombre del paciente</th>
+                        <th scope="col">Doctor Responsable</th>
+                        <th scope="col">Operacion</th>
+                        <th scope="col">Tipo de dieta</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let costumer of costumerServices.costumers">
+                        <th scope="row">{{costumer.number}}</th>
+                        <td>{{costumer.pacientName + " " + costumer.pacientSecondName + " " + costumer.pacientLastName}}</td>
+                        <td>{{costumer.docotAsign}}</td>
+                        <td>{{costumer.typeOperation}}</td>
+                        <td>{{costumer. typeOfDiet}}</td>
+                        
+                        <td>
+                            <button class="btn btn-info" (click)="editCostumer(costumer)"> <i class="fas fa-edit"></i></button>
+                        </td>
+                        <td>
+                            <button class="btn btn-danger" (click)="deleteCostumer(costumer._id!)" ><i class="fas fa-trash-alt"></i></button>
+                        </td>
+
+                        <td>
+                          <button class="btn btn-light" type="button"  data-toggle="modal" data-target="#staticBackdrop" (click)="generate_QR(costumer.number)" ><i class="fas fa-qrcode"></i></button>
+                      </td>
+
+                      </tr>
+                    </tbody>
+                  </table>
+            </div>             
+        </div>
+        <div class="columna col-lg-4">
+            <div class="widget estadisticas">
+                <h3 class="titulo">Estadisticas</h3>
+                <div class="contenedor d-flex flex-wrap">
+                    <div class="caja">
+                        <h3>{{contadorIngreso}}</h3>
+                        <p>Pacientes Ingresados</p>
+                    </div>
+                    <div class="caja">
+                        <h3>{{contadorEditar}}</h3>
+                        <p>Edicion de diagnostico</p>
+                    </div>
+                    <div class="caja">
+                        <h3>{{contadorEliminar}}</h3>
+                        <p>Alta de pacientes</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Descargue este y pegue este QR cerca de la camilla indicada</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="row" id="img">
+          <div  class="col-12 justify-content-center">
+            <h1 class="tituto_h1">Este QR dara los datos necesarios del paciente ubicado en la camilla seleccionada</h1>
+          </div>
+          <div  class="col-12 justify-content-center d-flex align-items-center">
+            <img [src]=urlQR alt="un QR">
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        <!-- <button type="button" class="btn btn-primary" (click)="imprimir_QR()">Imprimir QR</button> -->
+      </div>
+    </div>
+  </div>
+</div>

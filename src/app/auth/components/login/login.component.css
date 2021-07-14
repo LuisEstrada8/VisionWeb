@@ -1,0 +1,42 @@
+.izquierda {
+    height: 100vh;
+    background-color: teal;
+  }
+  
+  .Titulo h2{
+    font-family: 'Nunito', sans-serif;
+    font-weight: bold;
+    color: azure;
+  }
+  
+  .Titulo h4{
+    font-family: 'Nunito', sans-serif;
+    font-weight: 300;
+    color: azure;
+    margin-left: 10;
+  }
+  
+  .image{
+    margin-top: 100px;
+  }
+  
+  .contenedor{
+    width: 60vh;
+    height: 50vh;
+    margin-top: 15%;
+    border-radius: 12px;
+    -webkit-box-shadow: 14px 10px 41px -14px rgba(0,0,0,0.59);
+    -moz-box-shadow: 14px 10px 41px -14px rgba(0,0,0,0.59);
+    box-shadow: 14px 10px 41px -14px rgba(0,0,0,0.59);
+    
+  }  
+  @media screen and (max-width: 869px) {
+   .izquierda{
+     display: none;
+   }
+
+   .contenedor{
+    width: 65vh;
+    height: 55vh;
+   }
+  }
